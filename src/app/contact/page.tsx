@@ -1,46 +1,68 @@
+import { ImagePlaceholder } from "@/components/ImagePlaceholder";
+import { PageIntro } from "@/components/PageIntro";
+
 export default function ContactPage() {
   return (
-    <div className="mx-auto w-full max-w-5xl px-6 py-10">
-      <h1 className="text-3xl font-black text-slate-900">Contact Us</h1>
-      <p className="mt-3 text-slate-700">
-        Reach out to Ultimate Global Nutritional Company Ltd for consultation, partnership, and program inquiries.
-      </p>
+    <div className="mx-auto w-full max-w-5xl space-y-10 px-6 py-12 md:py-16">
+      <PageIntro
+        title="Contact us"
+        subtitle="Reach out for consultation, partnership, and program inquiries. We respond as quickly as possible."
+      />
 
-      <section className="mt-8 grid gap-6 md:grid-cols-2">
-        <article className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-xl font-bold text-slate-900">Direct Contact</h2>
-          <ul className="mt-4 space-y-2 text-slate-700">
-            <li>
-              <span className="font-semibold">Phone:</span>{" "}
-              <a href="tel:+2349068041633" className="text-emerald-700 underline-offset-2 hover:underline">
-                09068041633
-              </a>
-            </li>
-            <li>
-              <span className="font-semibold">Email:</span>{" "}
-              <a
-                href="mailto:ultimateglobalnutritionalco@gmail.com"
-                className="text-emerald-700 underline-offset-2 hover:underline"
-              >
-                ultimateglobalnutritionalco@gmail.com
-              </a>
-            </li>
-            <li>
-              <span className="font-semibold">Company:</span> Ultimate Global Nutritional Company Ltd
-            </li>
-          </ul>
-        </article>
+      <div className="grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-stretch">
+        <div className="space-y-6">
+          <article className="rounded-3xl border border-white/60 bg-white/85 p-8 shadow-xl shadow-emerald-900/5 backdrop-blur-md">
+            <h2 className="text-xl font-black text-slate-900">Direct contact</h2>
+            <ul className="mt-6 space-y-4 text-slate-700">
+              <li>
+                <span className="text-sm font-bold uppercase tracking-wider text-emerald-700">Phone</span>
+                <br />
+                <a href="tel:+2349068041633" className="text-lg font-semibold text-slate-900 hover:text-emerald-800">
+                  09068041633
+                </a>
+              </li>
+              <li>
+                <span className="text-sm font-bold uppercase tracking-wider text-emerald-700">Email</span>
+                <br />
+                <a
+                  href="mailto:ultimateglobalnutritionalco@gmail.com"
+                  className="break-all font-semibold text-emerald-800 underline-offset-2 hover:underline"
+                >
+                  ultimateglobalnutritionalco@gmail.com
+                </a>
+              </li>
+              <li>
+                <span className="text-sm font-bold uppercase tracking-wider text-emerald-700">Company</span>
+                <p className="mt-1 font-semibold text-slate-900">Ultimate Global Nutritional Company Ltd</p>
+              </li>
+            </ul>
+          </article>
 
-        <article className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
-          <h2 className="text-xl font-bold text-emerald-900">Available For</h2>
-          <ul className="mt-4 list-inside list-disc space-y-2 text-emerald-900/90">
-            <li>Body checkup scheduling</li>
-            <li>Wellness recommendations</li>
-            <li>Health and nutrition presentations</li>
-            <li>Personal and group consultations</li>
-          </ul>
-        </article>
-      </section>
+          <article className="rounded-3xl border border-emerald-200/60 bg-gradient-to-br from-emerald-50 to-cyan-50 p-8 shadow-lg shadow-emerald-900/5">
+            <h2 className="text-xl font-black text-emerald-950">Available for</h2>
+            <ul className="mt-4 grid gap-2 text-emerald-900/90 sm:grid-cols-2">
+              {[
+                "Body checkup scheduling",
+                "Wellness recommendations",
+                "Health and nutrition presentations",
+                "Personal and group consultations",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2 rounded-2xl border border-emerald-200/50 bg-white/70 px-3 py-2 text-sm font-medium">
+                  <span className="text-emerald-600">●</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </article>
+        </div>
+
+        <ImagePlaceholder
+          label="Office / location image"
+          variant="forest"
+          aspectClassName="aspect-[4/5] lg:aspect-auto lg:min-h-[28rem]"
+          className="w-full lg:h-full"
+        />
+      </div>
     </div>
   );
 }
