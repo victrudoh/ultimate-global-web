@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { contentShell } from "@/lib/layout";
+import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: { absolute: `${siteConfig.shortName} | ${siteConfig.legalName}` },
+  description: siteConfig.description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: `${siteConfig.shortName} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    url: "/",
+  },
+};
 
 const directors = [
   "Tartenger Usaamo Ephraim",

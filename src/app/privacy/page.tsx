@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import { PageIntro } from "@/components/PageIntro";
 import { contentShell } from "@/lib/layout";
+import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Privacy policy",
+  description: `Privacy policy for ${siteConfig.legalName}: how we collect, use, and protect your information.`,
+  alternates: { canonical: "/privacy" },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: `Privacy policy | ${siteConfig.shortName}`,
+    url: "/privacy",
+  },
+};
 
 export default function PrivacyPage() {
   return (

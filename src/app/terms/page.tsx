@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import { PageIntro } from "@/components/PageIntro";
 import { contentShell } from "@/lib/layout";
+import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Terms of use",
+  description: `Terms of use for ${siteConfig.legalName} services and website.`,
+  alternates: { canonical: "/terms" },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: `Terms of use | ${siteConfig.shortName}`,
+    url: "/terms",
+  },
+};
 
 export default function TermsPage() {
   return (

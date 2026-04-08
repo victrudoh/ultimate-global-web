@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { PageIntro } from "@/components/PageIntro";
 import { contentShell } from "@/lib/layout";
+import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "About us",
+  description: `Learn about ${siteConfig.legalName}: mission, vision, and wellness programs that empower people physically, financially, mentally, and emotionally.`,
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: `About us | ${siteConfig.shortName}`,
+    description: `Mission, vision, and leadership of ${siteConfig.legalName}.`,
+    url: "/about",
+  },
+};
 
 export default function AboutPage() {
   return (

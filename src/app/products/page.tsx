@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { PageIntro } from "@/components/PageIntro";
 import { contentShell } from "@/lib/layout";
+import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Products",
+  description: `Nutritional and wellness products from ${siteConfig.legalName}. Personalized recommendations after consultation.`,
+  alternates: { canonical: "/products" },
+  openGraph: {
+    title: `Products | ${siteConfig.shortName}`,
+    description: "Wellness packs and consultation-based product plans tailored to your goals.",
+    url: "/products",
+  },
+};
 
 const products = [
   {

@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { PageIntro } from "@/components/PageIntro";
 import { contentShell } from "@/lib/layout";
+import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: `Contact ${siteConfig.legalName}: phone ${siteConfig.phoneDisplay}, email, consultation booking, and partnership inquiries.`,
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: `Contact | ${siteConfig.shortName}`,
+    description: `Reach ${siteConfig.legalName} for wellness consultation, presentations, and programs.`,
+    url: "/contact",
+  },
+};
 
 export default function ContactPage() {
   return (

@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { PageIntro } from "@/components/PageIntro";
 import { contentShell } from "@/lib/layout";
+import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description: `Wellness services from ${siteConfig.legalName}: body checkup, recommendations, presentations, consultation, and nutritional product guidance.`,
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: `Services | ${siteConfig.shortName}`,
+    description: "Body checkup, recommendation, presentation, consultation, and product support.",
+    url: "/services",
+  },
+};
 
 const services = [
   {
