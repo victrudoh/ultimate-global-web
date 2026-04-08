@@ -4,7 +4,7 @@ import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { contentShell } from "@/lib/layout";
 import { easeOut, springSnappy } from "@/lib/motion";
 import { MotionLink } from "@/components/MotionLink";
@@ -22,10 +22,23 @@ function linkActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
+function scrollWindowTop(behavior: ScrollBehavior = "instant") {
+  window.scrollTo({ top: 0, left: 0, behavior });
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+}
+
 export function SiteHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const reduce = useReducedMotion();
+  const mobileNavScrollPending = useRef(false);
+
+  useEffect(() => {
+    if (!mobileNavScrollPending.current) return;
+    mobileNavScrollPending.current = false;
+    scrollWindowTop("instant");
+  }, [pathname]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -159,7 +172,12 @@ export function SiteHeader() {
                   <Link
                     href={item.href}
                     className={linkClass(item.href, true)}
-                    onClick={() => setMenuOpen(false)}
+                    onClick={() => {
+                      setMenuOpen(false);
+                      mobileNavScrollPending.current = true;
+                      scrollWindowTop("instant");
+                      requestAnimationFrame(() => scrollWindowTop("instant"));
+                    }}
                   >
                     {item.label}
                   </Link>
