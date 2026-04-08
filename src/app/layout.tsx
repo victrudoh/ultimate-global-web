@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Link from "next/link";
 import { BgMesh } from "@/components/BgMesh";
+import { MainTransition } from "@/components/MainTransition";
 import { OrganizationJsonLd } from "@/components/OrganizationJsonLd";
 import { SiteHeader } from "@/components/SiteHeader";
 import { contentShell } from "@/lib/layout";
@@ -98,7 +99,7 @@ export default function RootLayout({
         <OrganizationJsonLd />
         <BgMesh />
         <SiteHeader />
-        <main className="relative z-0 flex-1">{children}</main>
+        <MainTransition>{children}</MainTransition>
         <footer className="relative z-0 border-t border-white/50 bg-white/70 backdrop-blur-md">
           <div className={`${contentShell} grid gap-4 py-10 text-sm text-slate-600 sm:grid-cols-3`}>
             <div>
@@ -110,11 +111,17 @@ export default function RootLayout({
               <span className="mt-1 block">{siteConfig.email}</span>
             </p>
             <p className="sm:text-right">
-              <Link href="/privacy" className="font-medium text-emerald-800 hover:underline">
+              <Link
+                href="/privacy"
+                className="font-medium text-emerald-800 underline-offset-4 transition-colors duration-200 hover:text-emerald-950 hover:underline"
+              >
                 Privacy
               </Link>
               <span className="mx-2 text-slate-300">|</span>
-              <Link href="/terms" className="font-medium text-emerald-800 hover:underline">
+              <Link
+                href="/terms"
+                className="font-medium text-emerald-800 underline-offset-4 transition-colors duration-200 hover:text-emerald-950 hover:underline"
+              >
                 Terms
               </Link>
             </p>

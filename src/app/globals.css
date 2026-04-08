@@ -21,3 +21,87 @@ body {
 ::selection {
   background-color: rgba(16, 185, 129, 0.25);
 }
+
+@keyframes mesh-float-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(12px, -10px) scale(1.03);
+  }
+}
+
+@keyframes mesh-float-b {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-14px, 8px);
+  }
+}
+
+@keyframes mesh-float-c {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(12deg);
+  }
+  50% {
+    transform: translate(-6px, 6px) rotate(8deg);
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mesh-animate-a {
+    animation: mesh-float-a 18s ease-in-out infinite;
+  }
+  .mesh-animate-b {
+    animation: mesh-float-b 22s ease-in-out infinite;
+  }
+  .mesh-animate-c {
+    animation: mesh-float-c 26s ease-in-out infinite;
+  }
+  .animate-pop-in {
+    animation: pop-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+}
+
+.interactive-card {
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s ease;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .interactive-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 20px 40px -20px rgba(6, 78, 59, 0.18),
+      0 8px 16px -8px rgba(15, 118, 110, 0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mesh-animate-a,
+  .mesh-animate-b,
+  .mesh-animate-c,
+  .animate-pop-in {
+    animation: none !important;
+  }
+  .interactive-card:hover {
+    transform: none;
+  }
+}

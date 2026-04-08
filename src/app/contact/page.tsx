@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FadeIn } from "@/components/FadeIn";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { PageIntro } from "@/components/PageIntro";
 import { contentShell } from "@/lib/layout";
@@ -23,15 +24,19 @@ export default function ContactPage() {
         subtitle="Reach out for consultation, partnership, and program inquiries. We respond as quickly as possible."
       />
 
+      <FadeIn delay={0.06}>
       <div className="grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-stretch">
         <div className="space-y-6">
-          <article className="rounded-3xl border border-white/60 bg-white/85 p-8 shadow-xl shadow-emerald-900/5 backdrop-blur-md">
+          <article className="interactive-card rounded-3xl border border-white/60 bg-white/85 p-8 shadow-xl shadow-emerald-900/5 backdrop-blur-md">
             <h2 className="text-xl font-black text-slate-900">Direct contact</h2>
             <ul className="mt-6 space-y-4 text-slate-700">
               <li>
                 <span className="text-sm font-bold uppercase tracking-wider text-emerald-700">Phone</span>
                 <br />
-                <a href="tel:+2349068041633" className="text-lg font-semibold text-slate-900 hover:text-emerald-800">
+                <a
+                  href="tel:+2349068041633"
+                  className="text-lg font-semibold text-slate-900 transition-colors duration-200 hover:text-emerald-800"
+                >
                   09068041633
                 </a>
               </li>
@@ -40,7 +45,7 @@ export default function ContactPage() {
                 <br />
                 <a
                   href="mailto:ultimateglobalnutritionalco@gmail.com"
-                  className="break-all font-semibold text-emerald-800 underline-offset-2 hover:underline"
+                  className="break-all font-semibold text-emerald-800 underline-offset-2 transition-colors duration-200 hover:text-emerald-950 hover:underline"
                 >
                   ultimateglobalnutritionalco@gmail.com
                 </a>
@@ -52,7 +57,7 @@ export default function ContactPage() {
             </ul>
           </article>
 
-          <article className="rounded-3xl border border-emerald-200/60 bg-gradient-to-br from-emerald-50 to-cyan-50 p-8 shadow-lg shadow-emerald-900/5">
+          <article className="interactive-card rounded-3xl border border-emerald-200/60 bg-gradient-to-br from-emerald-50 to-cyan-50 p-8 shadow-lg shadow-emerald-900/5">
             <h2 className="text-xl font-black text-emerald-950">Available for</h2>
             <ul className="mt-4 grid gap-2 text-emerald-900/90 sm:grid-cols-2">
               {[
@@ -77,6 +82,7 @@ export default function ContactPage() {
           className="w-full lg:h-full"
         />
       </div>
+      </FadeIn>
     </div>
   );
 }

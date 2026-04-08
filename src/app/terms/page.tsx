@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FadeIn } from "@/components/FadeIn";
 import { PageIntro } from "@/components/PageIntro";
 import { contentShell } from "@/lib/layout";
 import { siteConfig } from "@/lib/site";
@@ -18,7 +19,8 @@ export default function TermsPage() {
   return (
     <div className={`${contentShell} py-12 md:py-16`}>
       <PageIntro title="Terms of use" subtitle="Guidelines for engaging with our services and this website." />
-      <div className="mt-8 rounded-3xl border border-white/60 bg-white/85 p-8 shadow-xl shadow-emerald-900/5 backdrop-blur-md">
+      <FadeIn delay={0.08}>
+      <div className="interactive-card mt-8 rounded-3xl border border-white/60 bg-white/85 p-8 shadow-xl shadow-emerald-900/5 backdrop-blur-md">
         <p className="leading-relaxed text-slate-700">
           By engaging with Ultimate Global Nutritional Company Ltd services, you agree to these terms.
         </p>
@@ -29,6 +31,7 @@ export default function TermsPage() {
           <li>Content on this site is company information and may be updated at any time.</li>
         </ul>
       </div>
+      </FadeIn>
     </div>
   );
 }

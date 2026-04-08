@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FadeIn } from "@/components/FadeIn";
 import { PageIntro } from "@/components/PageIntro";
 import { contentShell } from "@/lib/layout";
 import { siteConfig } from "@/lib/site";
@@ -18,7 +19,8 @@ export default function PrivacyPage() {
   return (
     <div className={`${contentShell} py-12 md:py-16`}>
       <PageIntro title="Privacy policy" subtitle="How we handle information you share with us." />
-      <div className="mt-8 rounded-3xl border border-white/60 bg-white/85 p-8 shadow-xl shadow-emerald-900/5 backdrop-blur-md">
+      <FadeIn delay={0.08}>
+      <div className="interactive-card mt-8 rounded-3xl border border-white/60 bg-white/85 p-8 shadow-xl shadow-emerald-900/5 backdrop-blur-md">
         <p className="leading-relaxed text-slate-700">
           Ultimate Global Nutritional Company Ltd respects your privacy. We only collect information shared during
           consultation or contact requests to provide our services effectively.
@@ -30,6 +32,7 @@ export default function PrivacyPage() {
           <li>By using our services, you consent to this policy.</li>
         </ul>
       </div>
+      </FadeIn>
     </div>
   );
 }

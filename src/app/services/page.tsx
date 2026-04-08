@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FadeIn } from "@/components/FadeIn";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { PageIntro } from "@/components/PageIntro";
 import { contentShell } from "@/lib/layout";
@@ -51,13 +52,14 @@ export default function ServicesPage() {
         subtitle="Practical wellness solutions for individuals and organizations through core services and curated nutritional support."
       />
 
+      <FadeIn delay={0.06}>
       <div className="grid gap-6 lg:grid-cols-3 lg:items-start">
         <div className="lg:col-span-2">
           <div className="grid gap-5 md:grid-cols-2">
             {services.map((service) => (
               <article
                 key={service.title}
-                className="overflow-hidden rounded-3xl border border-white/60 bg-white/80 shadow-xl shadow-emerald-900/5 backdrop-blur-md"
+                className="interactive-card overflow-hidden rounded-3xl border border-white/60 bg-white/80 shadow-xl shadow-emerald-900/5 backdrop-blur-md"
               >
                 <ImagePlaceholder
                   label={`${service.title} image`}
@@ -73,7 +75,7 @@ export default function ServicesPage() {
             ))}
           </div>
         </div>
-        <aside className="rounded-3xl border border-white/60 bg-gradient-to-b from-emerald-600 to-teal-700 p-6 text-white shadow-xl shadow-teal-900/25">
+        <aside className="interactive-card rounded-3xl border border-white/60 bg-gradient-to-b from-emerald-600 to-teal-700 p-6 text-white shadow-xl shadow-teal-900/25">
           <h2 className="text-lg font-black">Product focus</h2>
           <ul className="mt-4 space-y-3 text-sm font-medium text-emerald-50">
             {products.map((product) => (
@@ -88,6 +90,7 @@ export default function ServicesPage() {
           </p>
         </aside>
       </div>
+      </FadeIn>
     </div>
   );
 }

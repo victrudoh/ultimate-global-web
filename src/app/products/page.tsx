@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FadeIn } from "@/components/FadeIn";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { PageIntro } from "@/components/PageIntro";
 import { contentShell } from "@/lib/layout";
@@ -46,11 +47,12 @@ export default function ProductsPage() {
         subtitle="Products are selected to complement healthy habits and wellness goals. Final recommendations are made after a consultation to ensure suitability."
       />
 
+      <FadeIn delay={0.06}>
       <section className="grid gap-6 md:grid-cols-2">
         {products.map((product) => (
           <article
             key={product.name}
-            className="overflow-hidden rounded-3xl border border-white/60 bg-white/80 shadow-xl shadow-emerald-900/5 backdrop-blur-md"
+            className="interactive-card overflow-hidden rounded-3xl border border-white/60 bg-white/80 shadow-xl shadow-emerald-900/5 backdrop-blur-md"
           >
             <ImagePlaceholder
               label="Product image"
@@ -65,14 +67,17 @@ export default function ProductsPage() {
           </article>
         ))}
       </section>
+      </FadeIn>
 
-      <section className="relative overflow-hidden rounded-3xl border border-emerald-200/70 bg-gradient-to-r from-emerald-600 to-teal-600 p-8 text-white shadow-xl shadow-teal-900/20 md:p-10">
+      <FadeIn delay={0.1}>
+      <section className="relative overflow-hidden rounded-3xl border border-emerald-200/70 bg-gradient-to-r from-emerald-600 to-teal-600 p-8 text-white shadow-xl shadow-teal-900/20 transition-shadow duration-300 md:p-10 md:hover:shadow-emerald-900/30">
         <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/15 blur-2xl" />
         <h2 className="relative text-2xl font-black">Need help choosing?</h2>
         <p className="relative mt-2 max-w-2xl text-emerald-50/95">
           Contact us for a product guidance session based on your wellness goals and current routine.
         </p>
       </section>
+      </FadeIn>
     </div>
   );
 }
