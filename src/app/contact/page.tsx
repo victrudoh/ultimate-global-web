@@ -1,9 +1,10 @@
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { PageIntro } from "@/components/PageIntro";
+import { contentShell } from "@/lib/layout";
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto w-full max-w-5xl space-y-10 px-6 py-12 md:py-16">
+    <div className={`${contentShell} space-y-10 py-12 md:py-16`}>
       <PageIntro
         title="Contact us"
         subtitle="Reach out for consultation, partnership, and program inquiries. We respond as quickly as possible."

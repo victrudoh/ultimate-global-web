@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
+import { contentShell } from "@/lib/layout";
 
 const directors = [
   "Tartenger Usaamo Ephraim",
@@ -53,7 +54,7 @@ const directorVariants = ["emerald", "ocean", "sunset", "forest", "royal"] as co
 
 export default function Home() {
   return (
-    <div className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 py-12 md:gap-20 md:py-16">
+    <div className={`${contentShell} flex flex-col gap-16 py-12 md:gap-20 md:py-16`}>
       <section className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/70 p-8 shadow-2xl shadow-emerald-900/10 backdrop-blur-md md:p-12 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-10">
         <div className="pointer-events-none absolute -right-20 top-0 h-64 w-64 rounded-full bg-emerald-400/20 blur-3xl" />
         <div className="pointer-events-none absolute bottom-0 left-1/4 h-48 w-48 rounded-full bg-cyan-400/15 blur-3xl" />

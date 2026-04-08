@@ -1,8 +1,9 @@
 import { PageIntro } from "@/components/PageIntro";
+import { contentShell } from "@/lib/layout";
 
 export default function PrivacyPage() {
   return (
-    <div className="mx-auto w-full max-w-4xl px-6 py-12 md:py-16">
+    <div className={`${contentShell} py-12 md:py-16`}>
       <PageIntro title="Privacy policy" subtitle="How we handle information you share with us." />
       <div className="mt-8 rounded-3xl border border-white/60 bg-white/85 p-8 shadow-xl shadow-emerald-900/5 backdrop-blur-md">
         <p className="leading-relaxed text-slate-700">

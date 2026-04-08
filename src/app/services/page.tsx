@@ -1,5 +1,6 @@
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { PageIntro } from "@/components/PageIntro";
+import { contentShell } from "@/lib/layout";
 
 const services = [
   {
@@ -31,7 +32,7 @@ const products = ["Nutritional support products", "Daily wellness essentials", "
 
 export default function ServicesPage() {
   return (
-    <div className="mx-auto w-full max-w-6xl space-y-12 px-6 py-12 md:py-16">
+    <div className={`${contentShell} space-y-12 py-12 md:py-16`}>
       <PageIntro
         title="Services & products"
         subtitle="Practical wellness solutions for individuals and organizations through core services and curated nutritional support."

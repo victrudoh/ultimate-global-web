@@ -1,9 +1,10 @@
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { PageIntro } from "@/components/PageIntro";
+import { contentShell } from "@/lib/layout";
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto w-full max-w-5xl space-y-10 px-6 py-12 md:py-16">
+    <div className={`${contentShell} space-y-10 py-12 md:py-16`}>
       <PageIntro
         title="About us"
         subtitle="Ultimate Global Nutritional Company Ltd is a wellness-focused company committed to empowering people physically, financially, mentally, and emotionally."

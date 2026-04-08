@@ -1,5 +1,6 @@
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { PageIntro } from "@/components/PageIntro";
+import { contentShell } from "@/lib/layout";
 
 const products = [
   {
@@ -26,7 +27,7 @@ const products = [
 
 export default function ProductsPage() {
   return (
-    <div className="mx-auto w-full max-w-6xl space-y-12 px-6 py-12 md:py-16">
+    <div className={`${contentShell} space-y-12 py-12 md:py-16`}>
       <PageIntro
         title="Products"
         subtitle="Products are selected to complement healthy habits and wellness goals. Final recommendations are made after a consultation to ensure suitability."
