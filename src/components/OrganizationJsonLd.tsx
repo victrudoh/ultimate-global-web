@@ -13,11 +13,6 @@ export function OrganizationJsonLd() {
     email: siteConfig.email,
     telephone: siteConfig.phoneTel,
     slogan: siteConfig.tagline,
-    additionalProperty: {
-      "@type": "PropertyValue",
-      name: "Corporate registration (RC)",
-      value: siteConfig.registrationNumber,
-    },
   };
 
   return (

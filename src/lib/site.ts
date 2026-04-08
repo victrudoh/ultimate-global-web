@@ -20,7 +20,6 @@ export const siteConfig = {
   email: "ultimateglobalnutritionalco@gmail.com",
   phoneDisplay: "09068041633",
   phoneTel: "+2349068041633",
-  registrationNumber: "9434621",
   locale: "en_NG",
   language: "en",
   keywords: [

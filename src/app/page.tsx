@@ -116,10 +116,6 @@ export default function Home() {
             aspectClassName="aspect-[4/5] md:aspect-[5/6]"
             className="max-w-md lg:ml-auto"
           />
-          <div className="absolute -bottom-4 -left-2 max-w-[14rem] rounded-2xl border border-white/70 bg-white/90 p-4 shadow-xl shadow-emerald-900/10 backdrop-blur-md md:left-4">
-            <p className="text-xs font-bold uppercase tracking-wider text-emerald-700">Registration</p>
-            <p className="mt-1 font-mono text-sm font-semibold text-slate-800">RC 9434621</p>
-          </div>
         </div>
         </section>
       </FadeIn>

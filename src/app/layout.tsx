@@ -104,7 +104,6 @@ export default function RootLayout({
           <div className={`${contentShell} grid gap-4 py-10 text-sm text-slate-600 sm:grid-cols-3`}>
             <div>
               <p className="font-semibold text-slate-900">{siteConfig.legalName}</p>
-              <p className="mt-2 text-slate-600">RC: {siteConfig.registrationNumber}</p>
             </div>
             <p className="sm:text-center">
               <span className="block font-medium text-slate-800">{siteConfig.phoneDisplay}</span>
